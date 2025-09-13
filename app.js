@@ -10,14 +10,18 @@ app.get("/", (req, res) => {
   //   };
 
   const fruits = ["Apple", "Banana", "Orange"];
-  //   const items = [
-  //     { name: "electronics", quantity: 5 },
-  //     { name: "furniture", quantity: 6 },
-  //     { name: "cloths", quantity: 43 },
-  //     { name: "books", quantity: 4 },
-  //   ];
+  const items = [
+    { name: "electronics", quantity: 5 },
+    { name: "furniture", quantity: 6 },
+    { name: "cloths", quantity: 43 },
+    { name: "books", quantity: 4 },
+  ];
   // Render ejs template and pass data
-  res.render("index", { username: "Amar Pudasaini", items: fruits });
+  res.render("index", {
+    username: "Amar Pudasaini",
+    items: fruits,
+    stuffs: items,
+  });
 });
 
 app.listen(3000, () => {

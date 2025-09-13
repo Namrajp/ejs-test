@@ -14,6 +14,14 @@
         <li><%= fruit %></li>
         <% }) %>
       </ul>
+      <p>There are other items to display on view</p>
+      <h1>Goods bought:</h1>
+      <ul>
+        <% stuffs.forEach((item) => { %>
+        <li><%= item.name + " -- No. of items "+ item.quantity%></li>
+
+        <% }) %>
+      </ul>
     </main>
   </body>
 </html>
