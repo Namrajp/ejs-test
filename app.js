@@ -1,8 +1,11 @@
 const express = require("express");
 const app = express();
+const bodyParser = require("body-parser");
 
 // Set EJS as the view engine
 app.set("view engine", "ejs");
+// Parse URL-encoded form data
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
   //   const data = {
@@ -22,6 +25,17 @@ app.get("/", (req, res) => {
     items: fruits,
     stuffs: items,
   });
+});
+
+// Handle POST request when the form is submitted
+app.post("/submit", (req, res) => {
+  const name = req.body.name;
+  const email = req.body.email;
+
+  // Process the form data (e.g., save to a database)
+
+  // Redirect or render a response
+  res.send(`Thank you, ${name}, for submitting your email (${email}).`);
 });
 
 app.listen(3000, () => {
