@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+    <%- include('./partials/head.ejs') %>
+
+  <body>
+    <%- include('./partials/nav.ejs') %>
+
+    <main class="clearfix">
+      <div class="wrapper">
+        <div id="breadcrumb"></div>
+        <h1><%= title %></h1>
+
+        <form method="POST" class="contact-form" action="/submit-form">
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control form-control-lg"
+              placeholder="Your Name"
+              name="name" id="name"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="email"
+              class="form-control form-control-lg"
+              placeholder="YourEmail@email.com"
+              name="email" id="email"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <textarea
+              class="form-control form-control-lg"
+              cols="80"
+              rows="10"
+              name="message"
+              placeholder="Your Message Here" 
+              style="padding: 1rem;"
+            >
+            </textarea>
+          </div>
+          <input
+            type="submit"
+            class="btn btn-primary btn-block"
+            value="Send"
+            name="submit"
+          />
+        </form>
+      </div>
+      <!-- end of wrapper -->
+
+      <div class="contacts-col col-lg-4 col-md-4 col-sm-12">
+        <div>
+          <section>
+            <i class="fas fa-envelope fa-2x"></i>
+            <h3>Email</h3>
+            <p>onesimplecode@outlook.com</p>
+          </section>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12">
+          <section>
+            <i class="fas fa-phone fa-2x" aria-hidden="true"></i>
+            <h3>PHONE</h3>
+            <p>(555) 555-3333</p>
+          </section>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12">
+          <section>
+            <i class="fas fa-address-card fa-2x" aria-hidden="true"></i>
+            <h3>Address</h3>
+            <p>12 Some Street, Sydney NSW</p>
+          </section>
+        </div>
+      </div>
+      <div class="contacts-col">
+        <h2>Let's start with your new Project!</h2>
+      </div>
+      <footer id="footer">
+            <%- include('./partials/footer.ejs') %>
+
+      </footer>
+    </main>
+
+    <script src="main.js"></script>
+  </body>
+</html>
