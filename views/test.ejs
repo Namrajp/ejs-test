@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ejs template engine tet</title>
+    <style>
+      body,
+      form {
+        width: 50%;
+        margin: 0 auto;
+      }
+      body {
+        text-align: center;
+      }
+      ul {
+        list-style: none;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Hello , <%= username %></h1>
+      <h1>Fruits:</h1>
+      <ul>
+        <% items.forEach((fruit) => { %>
+        <li><%= fruit %></li>
+        <% }) %>
+      </ul>
+      <h2>Form Example</h2>
+      <form action="/submit" method="post">
+        <p>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+        </p>
+        <p>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+        </p>
+        <br />
+        <button type="submit">Submit</button>
+      </form>
+      <p>There are other items to display on view</p>
+      <h1>Goods bought:</h1>
+      <ul>
+        <% stuffs.forEach((item) => { %>
+        <li><%= item.name + " -- No. of items "+ item.quantity%></li>
+
+        <% }) %>
+      </ul>
+    </main>
+  </body>
+</html>
