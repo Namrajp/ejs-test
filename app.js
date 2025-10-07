@@ -4,7 +4,7 @@ const express = require("express");
 const app = express();
 // Set EJS as the view engine
 app.set("view engine", "ejs");
-app.use(express.static(path.join(__dirname, "public"))); // static file i.e. public folder
+app.use(express.static(path.join(__dirname, "views"))); // static file i.e. public folder
 // form submit middleware
 app.use(express.urlencoded({ extended: true }));
 
